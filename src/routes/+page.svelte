@@ -2,6 +2,7 @@
 	import { counters } from '../store.js';
 	import Counter from '../components/Counter.svelte';
 	import { fade } from 'svelte/transition';
+	import TitleList from '../components/TitleList.svelte';
 	const addCounter = () => {
 		$counters = [...$counters, { title: 'new title', count: 0 }];
 	};
@@ -18,16 +19,9 @@
 				<span class="border-b border-black" in:fade>{totalNum}</span>
 			{/key}
 		</div>
-
-		<ul class="flex flex-wrap gap-1 ">
-			<!-- todo:TitleListコンポーネント化 -->
-			{#each $counters as counter}
-				<li class="text-xs">
-					{counter.title}
-				</li>
-			{/each}
-		</ul>
 		<button on:click={addCounter}>new counter</button>
+		<TitleList />
+
 		<ul>
 			{#if $counters === null}
 				<li>no counter</li>
