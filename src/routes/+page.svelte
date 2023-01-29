@@ -3,10 +3,12 @@
 	import Counter from '../components/Counter.svelte';
 	import { fade } from 'svelte/transition';
 	import TitleList from '../components/TitleList.svelte';
+
 	const addCounter = () => {
 		$counters = [...$counters, { title: 'new title', count: 0 }];
 	};
 	$: totalNum = $counters.reduce((acc, cur) => acc + cur.count, 0);
+	let clickedIndex: number;
 </script>
 
 <main class="min-h-screen bg-gray-100">
@@ -20,7 +22,11 @@
 			{/key}
 		</div>
 		<button on:click={addCounter}>new counter</button>
-		<TitleList />
+		<TitleList
+			on:focus={(e) => {
+				clickedIndex = e.detail.index;
+			}}
+		/>
 
 		<ul>
 			{#if $counters === null}
@@ -28,7 +34,7 @@
 			{:else}
 				{#each $counters as counter, index}
 					<li>
-						<Counter {index} />
+						<Counter {index} {clickedIndex} />
 					</li>
 				{/each}
 			{/if}

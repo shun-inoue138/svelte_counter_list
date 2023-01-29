@@ -1,7 +1,13 @@
 <script lang="ts">
 	import { fly, fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	export let index: number;
+	export let clickedIndex: number;
 	import { counters } from '../store.js';
+	let inputEL = null;
+	$: if (index === clickedIndex) {
+		inputEL.focus();
+	}
 	const increment = () => {
 		$counters[index].count++;
 	};
@@ -20,7 +26,7 @@
 </script>
 
 <div in:fly={{ y: 30 }}>
-	<input type="text" bind:value={$counters[index].title} />
+	<input type="text" bind:value={$counters[index].title} bind:this={inputEL} />
 	<span>{$counters[index].count}</span>
 	<button on:click={increment}>+</button>
 	<button on:click={decrement}>-</button>
