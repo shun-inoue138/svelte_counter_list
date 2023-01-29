@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fly, fade } from 'svelte/transition';
 	export let index: number;
 	import { counters } from '../store.js';
 	const increment = () => {
@@ -18,7 +19,7 @@
 	};
 </script>
 
-<div>
+<div in:fly={{ y: 30 }}>
 	<input type="text" bind:value={$counters[index].title} />
 	<span>{$counters[index].count}</span>
 	<button on:click={increment}>+</button>
