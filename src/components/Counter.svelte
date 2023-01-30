@@ -35,7 +35,7 @@
 			type="text"
 			bind:value={$counters[index].title}
 			bind:this={inputEL}
-			class="rounded-md py-2 px-2 md:px-4  w-32 md:w-60 max-[342px]:w-28"
+			class="rounded-md py-2 px-2 md:px-4  w-32 md:w-60 max-[342px]:w-24"
 			placeholder="titleを入力してください"
 		/>
 	</label>
