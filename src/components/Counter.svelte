@@ -3,11 +3,11 @@
 	import { onMount } from 'svelte';
 	export let index: number;
 	export let clickedIndex: number;
-	import { counters } from '../store.js';
+	import { counters } from '../store';
 
-	let inputEL = null;
+	let inputEL: null | HTMLElement = null;
 	$: if (index === clickedIndex) {
-		inputEL.focus();
+		inputEL?.focus();
 	}
 	const increment = () => {
 		$counters[index].count++;

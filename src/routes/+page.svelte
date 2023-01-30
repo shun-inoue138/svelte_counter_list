@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { counters } from '../store.js';
+	import { counters } from '../store';
 	import Counter from '../components/Counter.svelte';
 	import { fade } from 'svelte/transition';
 	import TitleList from '../components/TitleList.svelte';

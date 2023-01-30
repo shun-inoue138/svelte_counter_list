@@ -1,5 +1,5 @@
 <script>
-	import { counters } from '../store.js';
+	import { counters } from '../store';
 	import TitleItem from './TitleItem.svelte';
 </script>
 
