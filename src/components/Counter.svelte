@@ -4,8 +4,7 @@
 	export let index: number;
 	export let clickedIndex: number;
 	import { counters } from '../store.js';
-	import Icon from '@iconify/svelte';
-	import trashFill from '@iconify/icons-bi/trash-fill';
+
 	let inputEL = null;
 	$: if (index === clickedIndex) {
 		inputEL.focus();
@@ -46,11 +45,23 @@
 		<span class="text-white text-xl">{$counters[index].count}</span>
 	</div>
 	<div class="ml-auto flex items-center gap-1">
-		<button on:click={increment}> +1 </button>
-		<button on:click={decrement}> -1 </button>
-		<button on:click={reset} class="ml-4"> reset </button>
+		<button on:click={increment}> <span class="text-blue-600 text-[2em] mr-4">+1</span> </button>
+		<button on:click={decrement}> <span class="text-red-600 text-[2em]">-1</span> </button>
+		<button on:click={reset} class="ml-4">
+			<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 32 32"
+				><path
+					fill="currentColor"
+					d="M18 28A12 12 0 1 0 6 16v6.2l-3.6-3.6L1 20l6 6l6-6l-1.4-1.4L8 22.2V16a10 10 0 1 1 10 10Z"
+				/></svg
+			>
+		</button>
 		<button on:click={deleteCounter} class="ml-4">
-			<Icon icon={trashFill} />
+			<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"
+				><path
+					fill="currentColor"
+					d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+				/></svg
+			>
 		</button>
 	</div>
 </div>
