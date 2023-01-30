@@ -4,7 +4,8 @@
 	export let index: number;
 	export let clickedIndex: number;
 	import { counters } from '../store.js';
-	import Icon from '@Iconify/svelte';
+	import Icon from '@iconify/svelte';
+	import trashFill from '@iconify/icons-bi/trash-fill';
 	let inputEL = null;
 	$: if (index === clickedIndex) {
 		inputEL.focus();
@@ -45,17 +46,11 @@
 		<span class="text-white text-xl">{$counters[index].count}</span>
 	</div>
 	<div class="ml-auto flex items-center gap-1">
-		<button on:click={increment}>
-			<Icon icon="mdi:increment" width="50" height="50" color="blue" />
-		</button>
-		<button on:click={decrement}>
-			<Icon icon="mdi:decrement" width="50" height="50" color="red" />
-		</button>
-		<button on:click={reset} class="ml-4">
-			<Icon icon="carbon:reset" color="#232338" width="30" height="30" />
-		</button>
+		<button on:click={increment}> +1 </button>
+		<button on:click={decrement}> -1 </button>
+		<button on:click={reset} class="ml-4"> reset </button>
 		<button on:click={deleteCounter} class="ml-4">
-			<Icon icon="material-symbols:delete-rounded" color="#232338" width="30" height="30" />
+			<Icon icon={trashFill} />
 		</button>
 	</div>
 </div>
