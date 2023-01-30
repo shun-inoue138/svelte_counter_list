@@ -35,13 +35,13 @@
 			type="text"
 			bind:value={$counters[index].title}
 			bind:this={inputEL}
-			class="rounded-md py-2 px-2 md:px-4  w-32 md:w-60"
+			class="rounded-md py-2 px-2 md:px-4  w-32 md:w-60 max-[342px]:w-28"
 			placeholder="titleを入力してください"
 		/>
 	</label>
 	<div>
 		<p class="hidden md:block">現在の数値</p>
-		<span class="text-white underline text-3xl md:text-2xl px-1 md:px-0"
+		<span class="text-white underline text-3xl md:text-2xl px-1 md:px-0 max-[342px]:text-xl"
 			>{$counters[index].count}</span
 		>
 	</div>
