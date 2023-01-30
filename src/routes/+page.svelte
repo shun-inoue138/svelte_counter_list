@@ -19,13 +19,13 @@
 			<div class="text-3xl mb-8">
 				Total:
 				{#key totalNum}
-					<span in:fade>{totalNum}</span>
+					<span in:fade>{totalNum > 99999 ? '99999+' : totalNum}</span>
 				{/key}
 			</div>
 			<button on:click={addCounter} class="bg-blue-500 text-white px-8 py-2 rounded-3xl mb-8 "
 				>add counter</button
 			>
-			<div class="mb-8">
+			<div class="mb-8 truncate">
 				<TitleList
 					on:focus={(e) => {
 						clickedIndex = e.detail.index;
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 
-		<ul>
+		<ul class="flex flex-col gap-6">
 			{#each $counters as _, index}
 				<li>
 					<Counter {index} {clickedIndex} />
