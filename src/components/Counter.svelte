@@ -45,7 +45,7 @@
 			>{$counters[index].count}</span
 		>
 	</div>
-	<div class="text-lg md:text-3xl ml-auto flex items-center gap-4 md:gap-3">
+	<div class="text-lg md:text-3xl ml-auto flex items-center gap-5 md:gap-8">
 		<button on:click={increment} class="text-blue-600 "> +1</button>
 		<button on:click={decrement} class="text-red-600"> -1 </button>
 		<button on:click={reset}>
