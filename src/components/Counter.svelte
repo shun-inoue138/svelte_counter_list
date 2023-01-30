@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { fly, fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 	export let index: number;
 	export let clickedIndex: number;
 	import { counters } from '../store';
@@ -45,8 +44,8 @@
 		<span class="text-white text-xl">{$counters[index].count}</span>
 	</div>
 	<div class="ml-auto flex items-center gap-1">
-		<button on:click={increment}> <span class="text-blue-600 text-[2em] mr-4">+1</span> </button>
-		<button on:click={decrement}> <span class="text-red-600 text-[2em]">-1</span> </button>
+		<button on:click={increment}> <span class="text-blue-600 text-[2em]">+1</span> </button>
+		<button on:click={decrement}> <span class="text-red-600 text-[2em] ml-4">-1</span> </button>
 		<button on:click={reset} class="ml-4">
 			<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 32 32"
 				><path

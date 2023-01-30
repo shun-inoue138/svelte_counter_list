@@ -35,7 +35,7 @@
 		</div>
 
 		<ul>
-			{#each $counters as counter, index}
+			{#each $counters as _, index}
 				<li>
 					<Counter {index} {clickedIndex} />
 				</li>
