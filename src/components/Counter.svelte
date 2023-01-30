@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
+	import { counters } from '../store';
 	export let index: number;
 	export let clickedIndex: number;
-	import { counters } from '../store';
-
 	let inputEL: null | HTMLElement = null;
+	//ボタンがクリックされclickedIndexが変更される度に下記処理を実行
 	$: if (index === clickedIndex) {
 		inputEL?.focus();
 	}

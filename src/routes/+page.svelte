@@ -3,11 +3,11 @@
 	import Counter from '../components/Counter.svelte';
 	import { fade } from 'svelte/transition';
 	import TitleList from '../components/TitleList.svelte';
-
 	const addCounter = () => {
 		$counters = [...$counters, { title: 'new title', count: 0 }];
 	};
 	$: totalNum = $counters.reduce((acc, cur) => acc + cur.count, 0);
+	//TitleItem.svelteで発火したfocusイベントにより、クリックされたindexを取得するための変数
 	let clickedIndex: number;
 </script>
 
@@ -23,7 +23,7 @@
 				{/key}
 			</div>
 			<button on:click={addCounter} class="bg-blue-500 text-white px-8 py-2 rounded-3xl mb-8 "
-				>new counter</button
+				>add counter</button
 			>
 			<div class="mb-8">
 				<TitleList

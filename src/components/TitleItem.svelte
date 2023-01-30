@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
-
 	export let index: number;
 	const dispatch = createEventDispatcher();
 </script>
