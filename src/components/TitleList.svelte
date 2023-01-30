@@ -5,7 +5,7 @@
 
 <ul class="flex flex-wrap gap-1 ">
 	{#each $counters as counter, index}
-		<TitleItem {index} on:focus>
+		<TitleItem {index} on:focusIndex>
 			{counter.title}
 		</TitleItem>
 	{/each}

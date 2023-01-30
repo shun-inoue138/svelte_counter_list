@@ -7,7 +7,7 @@
 		$counters = [...$counters, { title: 'new title', count: 0 }];
 	};
 	$: totalNum = $counters.reduce((acc, cur) => acc + cur.count, 0);
-	//TitleItem.svelteで発火したfocusイベントにより、クリックされたindexを取得するための変数
+	//TitleItem.svelteで発火したfocusイベントから、クリックされたindexを取得するための変数
 	let clickedIndex: number;
 </script>
 
@@ -27,7 +27,7 @@
 			>
 			<div class="mb-8 truncate">
 				<TitleList
-					on:focus={(e) => {
+					on:focusIndex={(e) => {
 						clickedIndex = e.detail.index;
 					}}
 				/>
